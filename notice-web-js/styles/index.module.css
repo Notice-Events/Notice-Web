@@ -1,0 +1,21 @@
+.section1 {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.section1 h3 {
+  color: #333;
+  font-size: 24px;
+  /* Add more styles as needed */
+}
+
+.section1 h5 {
+  color: #777;
+  font-size: 18px;
+  /* Add more styles as needed */
+}
+
+.search-container {
+  margin-top: 20px;
+  /* Add more styles as needed */
+}

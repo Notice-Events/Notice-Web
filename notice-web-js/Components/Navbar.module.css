@@ -1,0 +1,66 @@
+.nav {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.navItemLogo {
+  margin-left: 90px;
+  margin-right: 100px;
+  font-weight:lighter;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: #000000;
+}
+.navItem a,
+.navItem b {
+  font-family: "Arial", sans-serif; 
+  font-size: medium;
+}
+
+.navItem a:hover {
+  color: #000;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.signupItem {
+  width: 100%; 
+}
+.navItemLogo b {
+  font-family: "Arial", sans-serif; 
+}
+
+.languageDropdown {
+  background-color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.languageDropdown:focus {
+  outline: none;
+}
+
+.languageDropdown option {
+  background-color: #ffffff;
+  color: #333;
+}
