@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import styles from "../styles/index.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const eventsData = [
   {
@@ -388,6 +390,139 @@ const Index = () => {
           </div>  
         ))} 
       </div> 
+      <section className="section4" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+        <h3 style={{ marginLeft: "20px" }}>Reviews</h3>
+      </section>
+      <div style={{ padding: '60px', display: 'flex' }}>
+    
+  </div>
+  <section className="section4" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+        <h3 style={{ marginLeft: "20px" }}>Upcoming Events</h3>
+        <h5 style={{ marginRight: "20px" }}>View all</h5>
+      </section>
+      <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center",}}>
+        {LocationData.map((location, index) => (
+          <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px"}}>
+            <img
+              src={location.image}
+              alt={location.Location}
+              onClick={() => {
+                console.log(`Clicked on ${location.Location}`);
+                // Add code to navigate to the event details page
+              }}
+              style={{ width: "280px", height: "285px", marginRight: "20px", borderRadius: "5px"}}
+            />
+            <div className={styles.eventDetails}>
+              <h4>{location.Venue}</h4>
+              <h6>{location.Time}</h6>
+              <h4>{location.Location}</h4>
+              <button style={{backgroundColor:"white", border:"none", marginLeft:"60%", fontSize:"large"}}><b>Read more</b></button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button
+          disabled={currentPage === 1}
+          onClick={handlePreviousPage}
+          style={{
+            backgroundColor: "#A9A9A9",
+            border: "none",
+            color: currentPage === 1 ? "#fff" : "#333",
+            padding: "10px 15px",
+            fontSize: "14px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+            marginRight: "10px",
+          }}
+        >
+          &lt;&lt;
+        </button>
+        <div style={{ marginTop: '0px' }}>
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentPage(index + 1)}
+              style={{
+                backgroundColor: '#D8D8D8',
+                border: 'none',
+                color: 'black',
+                padding: '10px 15px',
+                fontSize: '14px',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                transition: 'background-color 0.3s ease',
+                marginRight: '5px',
+              }}
+            >
+              {index + 1}
+            </button>
+          ))}
+        </div>
+        <button
+          disabled={currentPage === totalPages}
+          onClick={handleNextPage}
+          style={{
+            backgroundColor: "#A9A9A9",
+            border: "none",
+            color: currentPage === 1 ? "#fff" : "#333",
+            padding: "10px 15px",
+            fontSize: "14px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+          }}
+        >
+          &gt;&gt;
+        </button>
+      </div>
+    <footer className="section4"
+  style={{
+    width: '100%',
+    height: '250px',
+    backgroundColor: '#DEDEDE',
+    marginTop: '30px',
+    display: 'flex',
+    fontFamily:'sans-serif'
+  }}
+><div className="Footer" style={{ display: 'flex' }}>
+<section className="social-media-icons" style={{
+  padding:"20px",
+  marginTop:"20px",
+  marginLeft:"100px",
+}}>
+  <h1>Company Logo</h1>
+  <h3>Social media</h3>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faFacebook} style={{color:"black"}} />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTwitter} style={{color:"black", marginLeft:"10px"}} />
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faLinkedin} style={{color:"black",marginLeft:"10px"}}/>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faInstagram} style={{color:"black", marginLeft:"10px"}} />
+        </a>
+      </section>
+  <div className="Quicklinks-footer" style={{marginTop:"20px", marginLeft:"520px",listStyle:"none", fontFamily:"sans-serif", fontSize:"light-bold",}}>
+    <h4 style={{marginTop:"20px"}}><b>Quick links</b></h4>
+    <li>About us</li>
+    <li style={{marginTop:"2.5px"}}>Careers</li>
+    <li style={{marginTop:"2.5px"}}>Contact us</li>
+    <li style={{marginTop:"2.5px"}}>privacy policy</li>
+    <li style={{marginTop:"2.5px"}}>Terms & Conditions</li>
+  </div>
+  <div className="Newsletter-footer" style={{marginTop:"20px", marginLeft:"130px"}}>
+      <h4><b>Newsletter</b></h4>
+      <p>Subscribe To Get The Latest Media Updates</p>
+      <button style={{backgroundColor:"#FFFFFF", width:"130px", height:"40px", borderRadius:"10px"}}><b>Live chat</b></button>
+  </div>
+</div>
+</footer>
 </div>
 );
 };
