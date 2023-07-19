@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import styles from "../styles/index.module.css";
 import Reviews from "../Components/reviews";
 import Footer from "../Components/footer";
+import Link from 'next/link';
 
 const eventsData = [
   {
@@ -162,7 +163,8 @@ const Index = () => {
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {currentEvents.map((event, index) => (
           <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
-            <img
+             <Link href={`/event/${event.id}`}>
+              <img
               src={event.image}
               alt={event.event}
               onClick={() => {
@@ -171,6 +173,7 @@ const Index = () => {
               }}
               style={{ width: "300px", height: "200px", marginRight: "20px", borderRadius: "5px" }}
             />
+            </Link>
             <div className={styles.eventDetails}>
               <h4>{event.event}</h4>
             </div>
@@ -249,7 +252,6 @@ const Index = () => {
               alt={location.Location}
               onClick={() => {
                 console.log(`Clicked on ${location.Location}`);
-                // Add code to navigate to the event details page
               }}
               style={{ width: "300px", height: "285px", marginRight: "20px", borderRadius: "5px" }}
             />
@@ -390,14 +392,9 @@ const Index = () => {
         ))} 
       </div> 
       <section className="section4" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-        <h3 style={{ marginLeft: "20px" }}>Reviews</h3>
-        <div>
+        <h3 style={{ marginLeft: "20px"}}>Reviews</h3>
           <Reviews />
-        </div>
       </section>
-      <div style={{ padding: '60px', display: 'flex' }}>
-    
-  </div>
   <section className="section4" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
         <h3 style={{ marginLeft: "20px" }}>Upcoming Events</h3>
         <h5 style={{ marginRight: "20px" }}>View all</h5>

@@ -34,7 +34,7 @@ const Navbar = () => {
           <b>Notice (LOGO)</b>
         </li>
         <li className={styles.navItem}>
-          <Link href="/home">
+          <Link href="">
             <b>Home</b>
           </Link>
         </li>

@@ -124,7 +124,7 @@ return (
     <img src="/images/Whoweare.jpg" alt="My Image" width={450} height={300} style={{ marginLeft: '200px', marginTop:"20px" }}/>
   </div>
     </section>
-    <section className="platform-class"
+    <section className="Downloadapp"
   style={{
     width: '78%',
     height: '350px',
