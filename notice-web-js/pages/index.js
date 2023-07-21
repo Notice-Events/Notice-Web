@@ -4,46 +4,79 @@ import styles from "../styles/index.module.css";
 import Reviews from "../Components/reviews";
 import Footer from "../Components/footer";
 import Link from 'next/link';
+import Image from "next/image";
 
 const eventsData = [
   {
-    image: "/images/Music.jpg",
+    image: {
+      src: "/images/Music.jpg",
+      width:300,
+      height:200,
+  },
     event: "Music",
   },
   {
-    image: "/images/Family.jpg",
+    image: { 
+      src:"/images/Family.jpg",
+      width:300,
+      height:200,
+    },
     event: "Family",
   },
   {
-    image: "/images/sports.jpg",
+    image: { 
+      src:"/images/sports.jpg",
+      width:300,
+      height:200,
+    },
     event: "Sports",
   },
   {
-    image: "/images/Arts.jpg",
+    image: { 
+      src:"/images/Arts.jpg",
+      width:300,
+      height:200,
+    },
     event: "Arts & Theater",
   },
 ];
 const LocationData = [
   {
-    image: "/images/food.jpg",
+    image: { 
+      src:"/images/food.jpg",
+      width:300,
+      height:200,
+    },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
     Location:"ZULI BAR & Grill, Zambia",
   },
   {
-    image: "/images/food.jpg",
+    image: { 
+      src:"/images/food.jpg",
+      width:300,
+      height:200,
+    },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
     Location:"ZULI BAR & Grill, Zambia",
   },
   {
-    image: "/images/food.jpg",
+    image: { 
+      src:"/images/food.jpg",
+      width:300,
+      height:200,
+    },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
     Location:"ZULI BAR & Grill, Zambia",
   },
   {
-    image: "/images/food.jpg",
+    image: { 
+      src:"/images/food.jpg",
+      width:300,
+      height:200,
+    },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
     Location:"ZULI BAR & Grill, Zambia",
@@ -164,7 +197,7 @@ const Index = () => {
         {currentEvents.map((event, index) => (
           <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
              <Link href={`/event/${event.id}`}>
-              <img
+              <Image
               src={event.image}
               alt={event.event}
               onClick={() => {
@@ -247,7 +280,7 @@ const Index = () => {
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {LocationData.map((location, index) => (
           <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
-            <img
+            <Image
               src={location.image}
               alt={location.Location}
               onClick={() => {
@@ -332,7 +365,7 @@ const Index = () => {
   }}
 >
   <div style={{ padding: '60px', display: 'flex' }}>
-    <img src="/images/platform.png" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
+    <Image src="/images/platform.png" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
     <div className="platform">
       <h1>Our platform helps bring your vision to life.</h1>
       <p
@@ -354,7 +387,7 @@ const Index = () => {
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {LocationData.map((location, index) => (
           <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
-            <img
+            <Image
               src={location.image}
               alt={location.Location}
               onClick={() => {
@@ -374,7 +407,7 @@ const Index = () => {
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {LocationData.map((location, index) => (
           <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
-            <img
+            <Image
               src={location.image}
               alt={location.Location}
               onClick={() => {
@@ -402,7 +435,7 @@ const Index = () => {
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center",}}>
         {LocationData.map((location, index) => (
           <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px"}}>
-            <img
+            <Image
               src={location.image}
               alt={location.Location}
               onClick={() => {

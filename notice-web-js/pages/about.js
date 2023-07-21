@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar";
-import Footer from "../Components/footer"
+import Footer from "../Components/footer";
+import Image from "next/image";
 
 
 const about = ()=> {
@@ -49,7 +50,7 @@ return (
       <br/>fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br/>proident, sunt in culpa qui officia deserunt mollit anim id est<br/> laborum.<br/>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br/>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut<br/>enim ad minim veniam, quis nostrud exercitation ullamco<br/>laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-    <img src="/images/About.jpg" alt="My Image" width={450} height={290} style={{ marginLeft: '200px', marginTop:"20px" }}/>
+    <Image src="/images/About.jpg" alt="My Image" width={450} height={290} style={{ marginLeft: '200px', marginTop:"20px" }}/>
   </div>
     </section>
     <section
@@ -88,7 +89,7 @@ return (
   }}
 >
   <div style={{ padding: '20px', display: 'flex' }}>
-  <img src="/images/Whatweoffer.jpg" alt="My Image" width={450} height={300} style={{ marginLeft: '20px', marginTop:"20px", marginRight:"200px" }}/>
+  <Image src="/images/Whatweoffer.jpg" alt="My Image" width={450} height={300} style={{ marginLeft: '20px', marginTop:"20px", marginRight:"200px" }}/>
     <div className="platform">
       <h1>What We Offer?</h1>
       <p
@@ -121,7 +122,7 @@ return (
       <br/>fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br/>proident, sunt in culpa qui officia deserunt mollit anim id est<br/> laborum.<br/>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br/>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut<br/>enim ad minim veniam, quis nostrud exercitation ullamco<br/>laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-    <img src="/images/Whoweare.jpg" alt="My Image" width={450} height={300} style={{ marginLeft: '200px', marginTop:"20px" }}/>
+    <Image src="/images/Whoweare.jpg" alt="My Image" width={450} height={300} style={{ marginLeft: '200px', marginTop:"20px" }}/>
   </div>
     </section>
     <section className="Downloadapp"
@@ -137,7 +138,7 @@ return (
   }}
 >
   <div style={{ padding: '60px', display: 'flex' }}>
-    <img src="/images/Download.jpg" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
+    <Image src="/images/Download.jpg" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
     <div className="DownloadApp">
       <h1>Notice App</h1>
       <p style={{fontSize:"25px"}}>The service charges a fee to event organizers in<br/>exchange for online ticketing services, unless<br/> the event is free.</p>

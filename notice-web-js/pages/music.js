@@ -3,24 +3,37 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/footer";
 import styles from "../styles/index.module.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Image from "next/image";
 
 const ExploreData = [
     {
-      image: "/images/Music.jpg",
+      image: {
+        src: "/images/Music.jpg",
+        width:300,
+        height:300,
+    },
       Venue: "A NIGHT KU CHALO",
       Rating:5.0,
       Time:"SATURDAY AT 6PM",
       Location:"The Music Club",
     },
     {
-      image: "/images/Music1.jpg",
+      image: {
+        src: "/images/Music1.jpg",
+        width:300,
+        height:500,
+    },
       Venue: "A NIGHT KU CHALO",
       Rating:4.5,
       Time:"SATURDAY AT 6PM",
       Location:"The Music Club",
     },
     {
-      image: "/images/Music2.jpg",
+      image: {
+      src: "/images/Music2.jpg",
+      width:300,
+      height:300,
+  },
       Venue: "A NIGHT KU CHALO",
       Rating:4.5,
       Time:"SATURDAY AT 6PM",
@@ -235,7 +248,7 @@ return (
     <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {ExploreData.map((Explore, Music) => (
           <div key={Music} className={styles.pictureContainer} style={{ marginLeft: "0px", marginBottom: "20px" }}>
-            <img
+            <Image
               src={Explore.image}
               alt={Explore.Location}
               onClick={() => {
@@ -264,7 +277,7 @@ return (
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {ExploreData.map((Explore, Music) => (
           <div key={Music} className={styles.pictureContainer} style={{ marginLeft: "0px", marginBottom: "20px" }}>
-            <img
+            <Image
               src={Explore.image}
               alt={Explore.Location}
               onClick={() => {
@@ -293,7 +306,7 @@ return (
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {ExploreData.map((Explore, Music) => (
           <div key={Music} className={styles.pictureContainer} style={{ marginLeft: "0px", marginBottom: "20px" }}>
-            <img
+            <Image
               src={Explore.image}
               alt={Explore.Location}
               onClick={() => {
@@ -328,7 +341,7 @@ return (
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {ExploreData.map((Explore, Music) => (
           <div key={Music} className={styles.pictureContainer} style={{ marginLeft: "0px", marginBottom: "20px" }}>
-            <img
+            <Image
               src={Explore.image}
               alt={Explore.Location}
               onClick={() => {
@@ -423,7 +436,7 @@ return (
   }}
 >
   <div style={{ padding: '60px', display: 'flex' }}>
-    <img src="/images/platform.png" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
+    <Image src="/images/platform.png" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
     <div className="platform">
       <h1>Our platform helps bring your vision to life.</h1>
       <p

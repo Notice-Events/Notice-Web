@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/footer";
+import Image from "next/image";
 
 const Contactus = ()=> {
     const [formData, setFormData] = useState({
@@ -177,7 +178,7 @@ const Contactus = ()=> {
         }}
     >
         <div style={{ padding: '60px', display: 'flex' }}>
-        <img src="/images/Download.jpg" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
+        <Image src="/images/Download.jpg" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
         <div className="DownloadApp">
             <h1>Notice App</h1>
             <p style={{fontSize:"25px"}}>The service charges a fee to event organizers in<br/>exchange for online ticketing services, unless<br/> the event is free.</p>
