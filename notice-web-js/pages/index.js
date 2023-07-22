@@ -126,7 +126,6 @@ const Index = () => {
           backgroundColor: "#DEDEDE",
           padding: "20px",
           textAlign: "center",
-          marginTop: "20px",
         }}
       >
         <h3 style={{ fontSize: "40px" }}>

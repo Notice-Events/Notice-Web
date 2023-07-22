@@ -1,6 +1,7 @@
 .nav {
-  background-color: #ffffff;
-  padding: 10px;
+  background-color: #ff3b3f;
+  padding: 20px;
+  height: 80px;
 }
 
 .nav ul {
@@ -25,7 +26,7 @@
 
 .navItem a {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
 }
 .navItem a,
 .navItem b {
@@ -34,9 +35,10 @@
 }
 
 .navItem a:hover {
-  color: #000;
+  color: #000000;
   text-decoration: underline;
-  font-weight: bolder;
+  font-weight: bold;
+  
 }
 
 .signupItem {
@@ -47,12 +49,12 @@
 }
 
 .languageDropdown {
-  background-color: #ffffff;
+  background-color: #ff3b3f;
   border: none;
   padding: 8px 12px;
   font-family: "Arial", sans-serif;
   font-size: 14px;
-  color: #333;
+  color:#000000;
   cursor: pointer;
 }
 
