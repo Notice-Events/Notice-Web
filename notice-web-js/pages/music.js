@@ -21,7 +21,7 @@ const ExploreData = [
       image: {
         src: "/images/Music1.jpg",
         width:300,
-        height:500,
+        height:300,
     },
       Venue: "A NIGHT KU CHALO",
       Rating:4.5,
