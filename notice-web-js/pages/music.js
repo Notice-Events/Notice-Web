@@ -443,9 +443,9 @@ return (
       style={{ marginTop: '20px' }}
       >
       Our platform helps bring your vision to life.Weather its a workshop,<br/>
-      concert, or conference, we'll help you make it happen.choose from a<br/>
+      concert, or conference, we will help you make it happen.choose from a<br/>
       variety of features like reserved seating, multi-level ticketing and more.<br/> 
-      share your event details with us and we'll help you build from the<br/>ground up.</p>
+      share your event details with us and we will help you build from the<br/>ground up.</p>
       <button style={{backgroundColor:"#A6A4A4", width:"150px", height:"30px", marginLeft:"65%"}}>Contact Us</button>
     </div>
   </div>

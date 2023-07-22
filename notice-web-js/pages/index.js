@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar";
 import styles from "../styles/index.module.css";
 import Reviews from "../Components/reviews";
 import Footer from "../Components/footer";
-import Link from 'next/link';
+import Link from "next/link";
 import Image from "next/image";
 
 const eventsData = [
@@ -232,21 +232,21 @@ const Index = () => {
         >
           &lt;&lt;
         </button>
-        <div style={{ marginTop: '0px' }}>
+        <div style={{ marginTop: "0px" }}>
           {Array.from({ length: totalPages }, (_, index) => (
             <button
               key={index}
               onClick={() => setCurrentPage(index + 1)}
               style={{
-                backgroundColor: '#D8D8D8',
-                border: 'none',
-                color: 'black',
-                padding: '10px 15px',
-                fontSize: '14px',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-                marginRight: '5px',
+                backgroundColor: "#D8D8D8",
+                border: "none",
+                color: "black",
+                padding: "10px 15px",
+                fontSize: "14px",
+                borderRadius: "5px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+                marginRight: "5px",
               }}
             >
               {index + 1}
@@ -315,21 +315,21 @@ const Index = () => {
         >
           &lt;&lt;
         </button>
-        <div style={{ marginTop: '0px' }}>
+        <div style={{ marginTop: "0px" }}>
           {Array.from({ length: totalPages }, (_, index) => (
             <button
               key={index}
               onClick={() => setCurrentPage(index + 1)}
               style={{
-                backgroundColor: '#D8D8D8',
-                border: 'none',
-                color: 'black',
-                padding: '10px 15px',
-                fontSize: '14px',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-                marginRight: '5px',
+                backgroundColor: "#D8D8D8",
+                border: "none",
+                color: "black",
+                padding: "10px 15px",
+                fontSize: "14px",
+                borderRadius: "5px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+                marginRight: "5px",
               }}
             >
               {index + 1}
@@ -355,26 +355,26 @@ const Index = () => {
       </div>
     <section className="section4"
    style={{
-    width: '78%',
-    height: '350px',
-    backgroundColor: '#DEDEDE',
-    marginLeft: '140px',
-    marginTop: '30px',
-    display: 'flex',
-    fontFamily:'sans-serif'
+    width: "78%",
+    height: "350px",
+    backgroundColor: "#DEDEDE",
+    marginLeft: "140px",
+    marginTop: "30px",
+    display: "flex",
+    fontFamily:"sans-serif"
   }}
 >
-  <div style={{ padding: '60px', display: 'flex' }}>
-    <Image src="/images/platform.png" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
+  <div style={{ padding: "60px", display: "flex" }}>
+    <Image src="/images/platform.png" alt="My Image" width={300} height={250} style={{ marginRight: "180px" }}/>
     <div className="platform">
       <h1>Our platform helps bring your vision to life.</h1>
       <p
-      style={{ marginTop: '20px' }}
+      style={{ marginTop: "20px" }}
       >
       Our platform helps bring your vision to life.Weather its a workshop,<br/>
-      concert, or conference, we'll help you make it happen.choose from a<br/>
+      concert, or conference, we will help you make it happen.choose from a<br/>
       variety of features like reserved seating, multi-level ticketing and more.<br/> 
-      share your event details with us and we'll help you build from the<br/>ground up.</p>
+      share your event details with us and we will help you build from the<br/>ground up.</p>
       <button style={{backgroundColor:"#A6A4A4", width:"150px", height:"30px", marginLeft:"65%"}}>Contact Us</button>
     </div>
   </div>
@@ -471,21 +471,21 @@ const Index = () => {
         >
           &lt;&lt;
         </button>
-        <div style={{ marginTop: '0px' }}>
+        <div style={{ marginTop: "0px" }}>
           {Array.from({ length: totalPages }, (_, index) => (
             <button
               key={index}
               onClick={() => setCurrentPage(index + 1)}
               style={{
-                backgroundColor: '#D8D8D8',
-                border: 'none',
-                color: 'black',
-                padding: '10px 15px',
-                fontSize: '14px',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                transition: 'background-color 0.3s ease',
-                marginRight: '5px',
+                backgroundColor: "#D8D8D8",
+                border: "none",
+                color: "black",
+                padding: "10px 15px",
+                fontSize: "14px",
+                borderRadius: "5px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+                marginRight: "5px",
               }}
             >
               {index + 1}
