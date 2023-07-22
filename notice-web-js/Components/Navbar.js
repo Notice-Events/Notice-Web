@@ -6,7 +6,7 @@ import styles from './navbar.module.css';
 
 const Navbar = () => {
   return (
-    <nav className={styles.nav} style={{ margin: 0, padding: 0, width: '100%' }}>
+    <nav className={styles.nav} style={{ margin: 0, padding: 0, width: '100%', color:"white"}}>
       <div>
         <ul style={{ display: 'flex', listStyle: 'none' }}>
           <div className={styles.navItemRight}>
@@ -14,15 +14,14 @@ const Navbar = () => {
               <option value="en">En</option>
               <option value="fr">Fr</option>
               <option value="es">Es</option>
-              {/* Add more language options as needed */}
             </select>
           </div>
-          <li className={styles.navItem}>
+          <li className={styles.navItem} style={{color:""}}>
             <Link href="#">
-              <b>LOGIN</b>
+              <b style={{color:"BLACK"}}>LOGIN</b>
             </Link>
           </li>
-          <li className={styles.navItem} style={{ backgroundColor: "grey", width: "100px", textAlign: "center", marginLeft: "10px", fontSize: "20px" }}>
+          <li className={styles.navItem} style={{ backgroundColor: "black", width: "100px", textAlign: "center", marginLeft: "10px", fontSize: "20px" }}>
             <Link href="#">
               <b>SIGNUP</b>
             </Link>
@@ -53,9 +52,9 @@ const Navbar = () => {
             <b>Contact Us</b>
           </Link>
         </li>
-        <li className={styles.navItem} style={{ backgroundColor: "#DEDEDE", width: "30px", textAlign: "center", marginLeft: "10px", fontSize: "20px", borderRadius:"50%" }}>
+        <li className={styles.navsearch} style={{ backgroundColor: "white", width: "30px",height:"25px", textAlign: "center", marginLeft: "10px", fontSize: "20px", borderRadius:"50%",}}>
           <Link href="#">
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch} color='black' />
           </Link>
         </li>
       </ul>
