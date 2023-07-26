@@ -13,7 +13,6 @@ return (
           backgroundColor: "#DEDEDE",
           padding: "20px",
           textAlign: "center",
-          marginTop: "20px",
         }}
       >
         <h3 style={{ fontSize: "40px", marginTop:"20px" }}>
@@ -129,12 +128,11 @@ return (
   style={{
     width: '78%',
     height: '350px',
-    backgroundColor: '#DEDEDE',
+    backgroundColor: '#ff3b3f',
     marginLeft: '140px',
     marginTop: '30px',
     display: 'flex',
     fontFamily:'sans-serif',
-    marginBottom:'40px'
   }}
 >
   <div style={{ padding: '60px', display: 'flex' }}>
@@ -142,7 +140,7 @@ return (
     <div className="DownloadApp">
       <h1>Notice App</h1>
       <p style={{fontSize:"25px"}}>The service charges a fee to event organizers in<br/>exchange for online ticketing services, unless<br/> the event is free.</p>
-      <button style={{backgroundColor:"#A6A4A4", width:"150px", height:"30px", marginLeft:"65%"}}>Download</button>
+      <button style={{backgroundColor:"black",color:"white", width:"150px", height:"30px", marginLeft:"65%"}}>Download</button>
     </div>
   </div>
     </section>

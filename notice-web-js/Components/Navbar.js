@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from './navbar.module.css';
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -16,24 +17,29 @@ const Navbar = () => {
               <option value="es">Es</option>
             </select>
           </div>
-          <li className={styles.navItem} style={{color:""}}>
-            <Link href="#">
+          <li className={styles.navItem}>
+            <Link href="/login">
               <b style={{color:"BLACK"}}>LOGIN</b>
             </Link>
           </li>
           <li className={styles.navItem} style={{ backgroundColor: "black", width: "100px", textAlign: "center", marginLeft: "10px", fontSize: "20px" }}>
-            <Link href="#">
+            <Link href="/signup">
               <b>SIGNUP</b>
             </Link>
           </li>
         </ul>
       </div>
-      <ul style={{ justifyContent: 'center', marginTop: '20px' }}>
-        <li style={{ marginRight: '360px', marginLeft: "-160px", fontFamily: "sans-serif" }}>
-          <b>Notice (LOGO)</b>
+      <ul style={{ justifyContent: 'center', }}>
+        <li style={{ marginRight: '400px', marginLeft: "-350px", fontFamily: "sans-serif",marginTop:"-50px" }}>
+        <Image
+        src="/images/1.png"
+        alt="Login Banner"
+        width={150}
+        height={150}
+      />
         </li>
         <li className={styles.navItem}>
-          <Link href="">
+          <Link href="/">
             <b>Home</b>
           </Link>
         </li>

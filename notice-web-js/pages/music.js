@@ -94,7 +94,6 @@ return (
           backgroundColor: "#DEDEDE",
           padding: "20px",
           textAlign: "center",
-          marginTop: "20px",
         }}
       >
         <h3 style={{ fontSize: "40px", marginTop:"80px" }}>
@@ -427,12 +426,11 @@ return (
   style={{
     width: '78%',
     height: '350px',
-    backgroundColor: '#DEDEDE',
+    backgroundColor: '#ff3b3f',
     marginLeft: '140px',
     marginTop: '30px',
     display: 'flex',
     fontFamily:'sans-serif',
-    marginBottom:'40px'
   }}
 >
   <div style={{ padding: '60px', display: 'flex' }}>
@@ -446,7 +444,7 @@ return (
       concert, or conference, we will help you make it happen.choose from a<br/>
       variety of features like reserved seating, multi-level ticketing and more.<br/> 
       share your event details with us and we will help you build from the<br/>ground up.</p>
-      <button style={{backgroundColor:"#A6A4A4", width:"150px", height:"30px", marginLeft:"65%"}}>Contact Us</button>
+      <button style={{backgroundColor:"black", width:"150px", height:"30px", marginLeft:"65%", color:"white"}}>Contact Us</button>
     </div>
   </div>
     </section>

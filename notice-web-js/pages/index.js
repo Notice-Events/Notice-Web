@@ -179,11 +179,12 @@ const Index = () => {
               padding: "15px",
               width: "300px",
               borderRadius: "10px",
-              backgroundColor: "grey",
+              backgroundColor: "#ff3b3f",
               marginLeft: "7px",
             }}
-          >
+          ><b>
             Search
+          </b>
           </button>
         </div>
       </section>
@@ -356,7 +357,7 @@ const Index = () => {
    style={{
     width: "78%",
     height: "350px",
-    backgroundColor: "#DEDEDE",
+    backgroundColor: "#ff3b3f",
     marginLeft: "140px",
     marginTop: "30px",
     display: "flex",
@@ -374,7 +375,7 @@ const Index = () => {
       concert, or conference, we will help you make it happen.choose from a<br/>
       variety of features like reserved seating, multi-level ticketing and more.<br/> 
       share your event details with us and we will help you build from the<br/>ground up.</p>
-      <button style={{backgroundColor:"#A6A4A4", width:"150px", height:"30px", marginLeft:"65%"}}>Contact Us</button>
+      <button style={{backgroundColor:"black",color:"white", width:"150px", height:"30px", marginLeft:"65%"}}>Contact Us</button>
     </div>
   </div>
     </section>
@@ -508,7 +509,7 @@ const Index = () => {
           &gt;&gt;
         </button>
       </div>
-      <div>
+      <div style={{ marginTop:"20px"}}>
         <Footer />
       </div>
 </div>
