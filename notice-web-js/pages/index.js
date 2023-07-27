@@ -123,21 +123,32 @@ const Index = () => {
       <section
         className="section1"
         style={{
-          backgroundColor: "#DEDEDE",
-          padding: "20px",
+          background: 'linear-gradient(to right, #05002A  , transparent), radial-gradient(circle at center right, #4E0505 , transparent)',
+          backgroundBlendMode: 'normal, multiply',
           textAlign: "center",
+          height:"400px",
+          color:"white",
+          
         }}
       >
+        <div style={{  height:"400px", width:"400px"}}>
+          <Image
+          src="/images/dj.jpg"
+          width={400}
+          height={400}
+          />
+        </div>
+        <div style={{ position: "relative", top: "-400px", textAlign: "justify", marginLeft:"500px" }}>
         <h3 style={{ fontSize: "40px" }}>
-          Create Unforgettable Events with Our Ticketing Platform
-        </h3>
-        <h5 style={{ fontSize: "15px" }}>
-          We provide everything you need to organize and promote your events
-        </h5>
-
+    Create Unforgettable<br />Events with Our Ticketing<br />Platform
+  </h3>
+  <h5 style={{ fontSize: "15px" }}>
+    We provide everything you need to organize and promote your events
+  </h5>
+</div>
         <div
           className="search-container"
-          style={{ marginTop: "50px" }}
+          style={{ marginTop: "-400px" }}
         >
           <select
             value={selectedCategory}
@@ -154,7 +165,6 @@ const Index = () => {
             <option value="sports">Sports</option>
             <option value="art">Art</option>
           </select>
-
           <select
             value={selectedLocation}
             onChange={handleLocationChange}

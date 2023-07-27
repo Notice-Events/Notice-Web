@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const about = ()=> {
 return (
-    <div className="about" style={{fontFamily:"sans-serif"}}>
+    <div className="about" style={{fontFamily:"poppins"}}>
         <Navbar/>
         <section
         className="section1"

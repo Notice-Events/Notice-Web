@@ -23,7 +23,7 @@ const login = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily:"sans-serif"}}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily:"poppins"}}>
       <Navbar />
       <Image
         src="/images/1.png"
@@ -67,7 +67,7 @@ const login = () => {
             marginTop:'50px',
           }}
         >
-          Login
+          LOGIN
         </button>
       </form>
       <section

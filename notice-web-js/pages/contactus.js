@@ -147,7 +147,7 @@ const Contactus = ()=> {
     marginTop:"60px",
     width:"500px",
     marginLeft:"50px",
-    fontFamily:"sans-serif",
+    fontFamily:"poppins",
     }}>
         <div style={{ marginTop:"50px",marginLeft:"20px"}}>
         <h3><b>Event Organize</b></h3>
