@@ -11,6 +11,16 @@ const EventDashboard = () => {
     height: '475px',
     fontFamily: 'Poppins, sans-serif',
   };
+  const linkStyle = {
+    color: 'black',
+    textDecoration: 'none',
+    cursor: 'pointer',
+  };
+
+  const linkHoverStyle = {
+    color: 'blue',
+    textDecoration: 'underline',
+  };
 
   const dropdownOptions = ['G & G EVENTS'];
   const dropdownuserOptions = ['👤  Jack'];
@@ -168,13 +178,17 @@ const EventDashboard = () => {
             </button>
           </div>
           <div style={{ marginTop: '-30px', display: 'flex' }}>
-            <Link href="#">
-              <h5 style={{ marginRight: '70px', marginLeft: '10px' }}>Active</h5>
-            </Link>
-            <Link href="#">
-              <h5>Pending</h5>
-            </Link>
-          </div>
+      <Link href="#">
+        <h5 style={{ ...linkStyle, marginRight: '70px', marginLeft: '10px' }} onMouseEnter={(e) => e.target.style = linkHoverStyle} onMouseLeave={(e) => e.target.style = linkStyle}>
+          Active
+        </h5>
+      </Link>
+      <Link href="#">
+        <h5 style={{ ...linkStyle }} onMouseEnter={(e) => e.target.style = linkHoverStyle} onMouseLeave={(e) => e.target.style = linkStyle}>
+          Pending
+        </h5>
+      </Link>
+    </div>
           <div style={{ display: 'flex', marginRight: '20px' }}>
             <h5 style={{ marginRight: '150px' }}>Name</h5>
             <h5 style={{ marginRight: '150px' }}>Date</h5>
