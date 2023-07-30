@@ -5,6 +5,7 @@ import Reviews from "../Components/reviews";
 import Footer from "../Components/footer";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from 'next/router';
 
 const eventsData = [
   {
@@ -14,8 +15,10 @@ const eventsData = [
       height:200,
   },
     event: "Music",
+    page: '../music',
   },
   {
+    id:2,
     image: { 
       src:"/images/Family.jpg",
       width:300,
@@ -24,6 +27,7 @@ const eventsData = [
     event: "Family",
   },
   {
+    id:3,
     image: { 
       src:"/images/sports.jpg",
       width:300,
@@ -32,6 +36,7 @@ const eventsData = [
     event: "Sports",
   },
   {
+    id:4,
     image: { 
       src:"/images/Arts.jpg",
       width:300,
@@ -100,7 +105,6 @@ const Index = () => {
   };
 
   const handleSearch = () => {
-    // Perform search based on selected category and location
     console.log("Searching...");
   };
 
@@ -112,13 +116,14 @@ const Index = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
-  // Calculate the events to display for the current page
   const startIndex = (currentPage - 1) * eventsPerPage;
   const endIndex = startIndex + eventsPerPage;
   const currentEvents = eventsData.slice(startIndex, endIndex);
 
+  const router = useRouter();
+
   return (
-    <div style={{ fontFamily: "sans-serif" }}>
+    <div style={{ font: "poppins" }}>
       <Navbar />
       <section
         className="section1"
@@ -206,13 +211,13 @@ const Index = () => {
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {currentEvents.map((event, index) => (
           <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
-             <Link href={`/event/${event.id}`}>
+             <Link href={`/event/${event.page}`}>
               <Image
               src={event.image}
               alt={event.event}
               onClick={() => {
                 console.log(`Clicked on ${event.event}`);
-                // Add code to navigate to the event details page
+                router.push(event.page);
               }}
               style={{ width: "300px", height: "200px", marginRight: "20px", borderRadius: "5px" }}
             />
