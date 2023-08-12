@@ -18,36 +18,37 @@ const login = () => {
 
    // Example POST method implementation:  
    async function postData(url, data) {
-    // Default options are marked with *
     try {
       const response = await fetch(url, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, *cors, same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
         headers: {
-          "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-        redirect: "follow", // manual, *follow, error
-        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-        body: JSON.stringify(data), // body data type must match "Content-Type" header
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data),
       });
-      return response.json(); // parses JSON response into native JavaScript objects
+      const jsonData = await response.json();
+      return jsonData;
     } catch (error) {
-      console.log(error)
+      console.log(error);
+      throw error; 
     }
-      }
-  async function handleSubmit () {
-    e.preventDefault();
-    var res = await postData('https://noticewebapi.azurewebsites.net/api/v2/auth/login',{
-      'username':username, 
-      "password": password
-    })
-    // Add your login logic here, such as sending the data to an API endpoint.
-    console.log(res);
-  };
+  }
 
+  async function handleSubmit(e) {
+    e.preventDefault(); // Prevent default form submission behavior
+    var res = await postData('https://noticewebapi.azurewebsites.net/api/v2/auth/login', {
+      'username': username,
+      'password': password,
+    });
+    // Add your login logic here, such as redirecting or displaying messages.
+    console.log(res);
+  }
+  
   return (
     <div className={styles.loginContainer}>
 
