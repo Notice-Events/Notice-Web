@@ -1,4 +1,3 @@
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/footer";
 import Image from "next/image";
 
@@ -6,7 +5,6 @@ import Image from "next/image";
 const about = ()=> {
 return (
     <div className="about" style={{fontFamily:"poppins"}}>
-        <Navbar/>
         <section
         className="section1"
         style={{

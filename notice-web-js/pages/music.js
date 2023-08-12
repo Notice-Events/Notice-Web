@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/footer";
 import styles from "../styles/index.module.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -87,7 +86,6 @@ const Music = () => {
     const MAX_RATING = 5;
 return (
     <div className="MUSIC" style={{fontFamily:"sans-serif"}}>
-        <Navbar />
         <section
         className="section1"
         style={{

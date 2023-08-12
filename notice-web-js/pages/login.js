@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Footer from "../Components/footer";
 import Image from "next/image";
-import Navbar from "../Components/Navbar";   
+import styles from "../styles/login.module.css"; 
+import Link from "next/link";
 
 const login = () => {
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleusernameChange = (e) => {
+  const handleUsernameChange = (e) => {
     setusername(e.target.value);
   };
 
@@ -15,89 +16,92 @@ const login = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+   // Example POST method implementation:  
+   async function postData(url, data) {
+    // Default options are marked with *
+    try {
+      const response = await fetch(url, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+        redirect: "follow", // manual, *follow, error
+        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+      });
+      return response.json(); // parses JSON response into native JavaScript objects
+    } catch (error) {
+      console.log(error)
+    }
+      }
+  async function handleSubmit () {
     e.preventDefault();
+    var res = await postData('https://noticewebapi.azurewebsites.net/api/v2/auth/login',{
+      'username':username, 
+      "password": password
+    })
     // Add your login logic here, such as sending the data to an API endpoint.
-    console.log('username:', username);
-    console.log('Password:', password);
+    console.log(res);
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily:"poppins"}}>
-      <Navbar />
+    <div className={styles.loginContainer}>
+
       <Image
         src="/images/1.png"
         alt="Login Banner"
-        width={500}
-        height={500}
-        style={{marginBottom:'-80px'}}
+        width={300}
+        height={300}
+        className={styles.loginImage}
       />
-      <h1 style={{ fontSize: 40, fontWeight: 'bold'}}>Login</h1>
-      <form onSubmit={handleSubmit} style={{ width: '300px', marginTop: '0px', marginLeft:"-200px"}}>
-        <div style={{ marginBottom: '10px' }}>
-          <label><b>Username:</b></label>
+      <h1 className={styles.loginTitle}>LOGIN</h1>
+      <form onSubmit={handleSubmit} className={styles.loginForm}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="username"><b>Username:</b></label>
           <input
-            type="username"
+            type="text"
+            id="username"
             placeholder="Enter username"
             value={username}
-            onChange={handleusernameChange}
-            style={{ width: '200%', padding: '15px', border: '1px solid #ccc', borderRadius: '4px', marginTop:"10px"}}
+            onChange={handleUsernameChange}
+            className={styles.inputField}
           />
         </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label><b>Password:</b></label>
+        <div className={styles.inputContainer}>
+          <label htmlFor="password"><b>Password:</b></label>
           <input
             type="password"
+            id="password"
             value={password}
             placeholder="Enter password"
             onChange={handlePasswordChange}
-            style={{ width: '200%', padding: '15px', border: '1px solid #ccc', borderRadius: '4px', marginTop:"10px" }}
+            className={styles.inputField}
           />
         </div>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: 'black',
-            color: 'white',
-            width: '210%',
-            padding: '15px',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            marginTop:'50px',
-          }}
-        >
-          LOGIN
-        </button>
+        <button type="submit" className={styles.loginButton}>LOGIN</button>
       </form>
-      <section
-        className="download_app"
-        style={{
-          width: '78%',
-          height: '350px',
-          backgroundColor: '#ff3b3f',
-          marginLeft: '140px',
-          marginTop: '300px',
-          display: 'flex',
-          fontFamily: 'sans-serif',
-          marginBottom: '40px'
-        }}
-      >
-        <div style={{ padding: '60px', display: 'flex' }}>
-          <Image src="/images/Download.jpg" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }} />
-          <div className="DownloadApp">
+      <section className={styles.downloadApp}>
+        <div className={styles.downloadContent}>
+          <Image src="/images/Download.jpg" alt="My Image" width={300} height={250} className={styles.downloadImage} />
+          <div className={styles.downloadAppContent}>
             <h1>Notice App</h1>
-            <p>The service charges a fee to event organizers in exchange for online ticketing services, unless the event is free.</p>
-            <button style={{ backgroundColor: 'black', color: 'white', width: '150px', height: '30px', marginLeft: 'auto' }}>
+            <p>We offer a secure payment processing system<br/>
+            integrated with multiple payment gateways so <br/>
+            you can accept payments without any hassle.</p>
+            <Link href={'https://play.google.com/store/apps/details?id=io.notice.notice&pli=1'}>
+            <button className={styles.downloadButton}>
               Download
-            </button>
+              </button>
+              </Link>
+            
           </div>
         </div>
       </section>
       <Footer />
-      <div style={{marginTop:"70px"}}>
-
-            </div>
     </div>
   );
 };

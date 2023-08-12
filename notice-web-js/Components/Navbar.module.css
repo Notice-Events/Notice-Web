@@ -1,36 +1,37 @@
 .nav {
   background-color: #ff3b3f;
-  padding: 20px;
+  padding: 10px;
   height: 100px;
 }
 
 .nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: flex-end;
+  justify-content: right; /* Change to 'center' */
   align-items: center;
   margin: 0;
   padding: 0;
 }
 
 .navItem {
-  margin-left: 35px;
+  margin-left: 30px;
   margin-right: 35px;
+  justify-content: right;
 }
 
 .navItemLogo {
-  margin-left: 90px;
-  margin-right: 100px;
-  font-weight:lighter;
+  margin-right: auto; 
+  font-weight: lighter;
+  margin-top: -50px;
 }
-
 .navItem a {
   text-decoration: none;
   color: #ffffff;
 }
+
 .navItem a,
 .navItem b {
-  font-family: "Arial", sans-serif; 
+  font-family: "Arial", sans-serif;
   font-size: medium;
 }
 
@@ -38,14 +39,19 @@
   color: #000000;
   text-decoration: underline;
   font-weight: bold;
-  
+}
+
+.navigation{
+  display: flex;
+  margin-top: -20px;
 }
 
 .signupItem {
-  width: 100%; 
+  width: 100%;
 }
+
 .navItemLogo b {
-  font-family: "Arial", sans-serif; 
+  font-family: "Arial", sans-serif;
 }
 
 .languageDropdown {
@@ -54,7 +60,7 @@
   padding: 8px 12px;
   font-family: "Arial", sans-serif;
   font-size: 14px;
-  color:#000000;
+  color: #000000;
   cursor: pointer;
 }
 
@@ -66,3 +72,59 @@
   background-color: #ffffff;
   color: #333;
 }
+
+/* ... (existing styles) ... */
+
+/* Media Queries for Responsiveness */
+
+/* For tablets */
+@media screen and (max-width: 1024px) {
+  .nav ul {
+    justify-content: center;
+  }
+
+  .navItemLogo {
+    margin: 0;
+    font-weight: bold;
+    margin-top: -0px; /* Adjust as needed */
+  }
+
+  .navItem {
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .navsearch {
+    display: none;
+  }
+}
+
+/* For Android phones */
+@media screen and (max-width: 480px) {
+  .nav {
+    padding: 5px;
+    height: 80px;
+  }
+
+  .nav ul {
+    justify-content: center;
+  }
+
+  .navItemLogo {
+    margin: 0;
+    font-weight: bold;
+    margin-top: -20px; /* Adjust as needed */
+  }
+
+  .navItem {
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .navsearch {
+    display: none;
+  }
+}
+

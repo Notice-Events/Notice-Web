@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import styles from './navbar.module.css';
+import styles from './Navbar.module.css';
 import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className={styles.nav} style={{ margin: 0, padding: 0, width: '100%', color:"white"}}>
+    <nav className={styles.nav}>
       <div>
-        <ul style={{ display: 'flex', listStyle: 'none' }}>
+        <ul className={styles.navUl}>
           <div className={styles.navItemRight}>
             <select className={styles.languageDropdown}>
               <option value="en">En</option>
@@ -19,50 +19,52 @@ const Navbar = () => {
           </div>
           <li className={styles.navItem}>
             <Link href="/login">
-              <b style={{color:"BLACK"}}>LOGIN</b>
+              <b className={styles.navLinkBlack}>LOGIN</b>
             </Link>
           </li>
-          <li className={styles.navItem} style={{ backgroundColor: "black", width: "100px", textAlign: "center", marginLeft: "10px", fontSize: "20px" }}>
+          <li className={`${styles.navItem} ${styles.navItemSignup}`}>
             <Link href="/signup">
               <b>SIGNUP</b>
             </Link>
           </li>
         </ul>
       </div>
-      <ul style={{ justifyContent: 'center', }}>
-        <li style={{ marginRight: '400px', marginLeft: "-350px", fontFamily: "sans-serif",marginTop:"-50px" }}>
-        <Image
-        src="/images/1.png"
-        alt="Login Banner"
-        width={150}
-        height={150}
-      />
+      <ul className={styles.navUlCenter}>
+        <li className={styles.navItemLogo}>
+          <Image
+            src="/images/1.png"
+            alt="Login Banner"
+            width={150}
+            height={150}
+          />
         </li>
+        <div className={styles.navigation} >
         <li className={styles.navItem}>
           <Link href="/">
-            <b>Home</b>
+            <b style={{marginLeft:"-700px"}}>Home</b>
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/create_event">
-            <b>Create an Event</b>
+            <b style={{marginLeft:"-600px"}}>Create an Event</b>
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/about">
-            <b>About</b>
+            <b style={{marginLeft:"-450px"}}>About</b>
           </Link>
         </li>
         <li className={styles.navItem}>
           <Link href="/contactus">
-            <b>Contact Us</b>
+            <b style={{marginLeft:"-350px"}}>Contact Us</b>
           </Link>
         </li>
-        <li className={styles.navsearch} style={{ backgroundColor: "white", width: "30px",height:"25px", textAlign: "center", marginLeft: "10px", fontSize: "20px", borderRadius:"50%",}}>
-          <Link href="#">
-            <FontAwesomeIcon icon={faSearch} color='black' />
+        <li className={styles.navsearch}>
+          <Link href="#" style={{marginLeft:"-150px", color:"black", backgroundcolor:"white"}}>
+            <FontAwesomeIcon icon={faSearch} className={styles.navSearchIcon} />
           </Link>
         </li>
+        </div>
       </ul>
     </nav>
   );

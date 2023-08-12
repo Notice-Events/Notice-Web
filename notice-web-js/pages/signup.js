@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Footer from "../Components/footer";
-import Image from "next/image";
-import Navbar from "../Components/Navbar";   
+import Image from "next/image";  
 
 const signup = () => {
   const [username, setusername] = useState('');
@@ -29,19 +28,18 @@ const signup = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily:"sans-serif"}}>
-        <Navbar />
       <Image
         src="/images/1.png"
         alt="Login Banner"
-        width={500}
-        height={500}
-        style={{marginBottom:'-80px'}}
+        width={300}
+        height={300}
+        style={{marginBottom:'-80px', marginLeft:"120px"}}
 
       />
-      <h3 style={{ fontSize: 40, fontWeight: 'bold'}}>SIGN UP</h3>
+      <h3 style={{ fontSize: 50, fontWeight: 'bold', marginLeft:"120px"}}>SIGN UP</h3>
       <form onSubmit={handleSubmit} style={{ width: '300px', marginTop: '0px', marginLeft:"-200px"}}>
         <div style={{ marginBottom: '10px' }}>
-          <label><b>Username:</b></label>
+          <label style={{fontFamily:"sans-serif"}}><b>Username:</b></label>
           <input
             type="username"
             placeholder="Enter username"
@@ -51,7 +49,7 @@ const signup = () => {
           />
         </div>
         <div style={{ marginBottom: '10px' }}>
-          <label><b>Email:</b></label>
+          <label style={{fontFamily:"sans-serif"}}><b>Email:</b></label>
           <input
             type="email"
             placeholder="Enter Email"
@@ -61,7 +59,7 @@ const signup = () => {
           />
         </div>
         <div style={{ marginBottom: '10px' }}>
-          <label><b>Password:</b></label>
+          <label style={{fontFamily:"sans-serif"}}><b>Password:</b></label>
           <input
             type="password"
             value={password}
@@ -84,7 +82,7 @@ const signup = () => {
             marginBottom:'300px',
           }}
         >
-          <b>signup</b>
+          <b>Sign up</b>
         </button>
       </form>
       <Footer />

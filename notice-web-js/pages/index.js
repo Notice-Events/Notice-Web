@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../Components/Navbar";
 import styles from "../styles/index.module.css";
 import Reviews from "../Components/reviews";
 import Footer from "../Components/footer";
@@ -9,6 +8,7 @@ import { useRouter } from 'next/router';
 
 const eventsData = [
   {
+    id:1,
     image: {
       src: "/images/Music.jpg",
       width:300,
@@ -25,6 +25,7 @@ const eventsData = [
       height:200,
     },
     event: "Family",
+    page: '../Family',
   },
   {
     id:3,
@@ -34,6 +35,7 @@ const eventsData = [
       height:200,
     },
     event: "Sports",
+    page: '../sports',
   },
   {
     id:4,
@@ -43,6 +45,7 @@ const eventsData = [
       height:200,
     },
     event: "Arts & Theater",
+    page: '../Arts',
   },
 ];
 const LocationData = [
@@ -86,7 +89,6 @@ const LocationData = [
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
     Location:"ZULI BAR & Grill, Zambia",
   },
-  // ... Add more location objects as needed
 ];
 
 const Index = () => {
@@ -123,8 +125,7 @@ const Index = () => {
   const router = useRouter();
 
   return (
-    <div style={{ font: "poppins" }}>
-      <Navbar />
+    <div style={{ fontFamily:"sans-serif,poppins"}}>
       <section
         className="section1"
         style={{

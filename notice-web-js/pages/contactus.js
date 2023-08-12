@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/footer";
 import Image from "next/image";
 
@@ -31,7 +30,6 @@ const Contactus = ()=> {
       };
     return (
         <div>
-            <Navbar />
         <section
             className="section1"
             style={{
