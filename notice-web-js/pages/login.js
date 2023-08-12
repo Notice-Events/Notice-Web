@@ -3,10 +3,13 @@ import Footer from "../Components/footer";
 import Image from "next/image";
 import styles from "../styles/login.module.css"; 
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 
 const login = () => {
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
   const handleUsernameChange = (e) => {
     setusername(e.target.value);
@@ -38,15 +41,25 @@ const login = () => {
       throw error; 
     }
   }
+  const router = useRouter();
 
   async function handleSubmit(e) {
     e.preventDefault(); // Prevent default form submission behavior
-    var res = await postData('https://noticewebapi.azurewebsites.net/api/v2/auth/login', {
+    try {
+      const res = await postData('https://noticewebapi.azurewebsites.net/api/v2/auth/login', {
       'username': username,
       'password': password,
     });
-    // Add your login logic here, such as redirecting or displaying messages.
-    console.log(res);
+    if (res.status === 200) {
+      // Login successful, use router to navigate to a new page
+      router.push('/dashboard'); // Replace with your actual route
+    } else {
+      setMessage('Invalid Credentials. Please try again');
+    }
+  } catch (error) {
+    setMessage('Invalid Credentials. Please try again');
+    console.error(error);
+  } 
   }
   
   return (
@@ -58,6 +71,7 @@ const login = () => {
         width={300}
         height={300}
         className={styles.loginImage}
+        priority
       />
       <h1 className={styles.loginTitle}>LOGIN</h1>
       <form onSubmit={handleSubmit} className={styles.loginForm}>
@@ -83,6 +97,7 @@ const login = () => {
             className={styles.inputField}
           />
         </div>
+        <div id="message">{message}</div>
         <button type="submit" className={styles.loginButton}>LOGIN</button>
       </form>
       <section className={styles.downloadApp}>
