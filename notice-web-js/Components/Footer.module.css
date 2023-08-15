@@ -11,18 +11,18 @@
 }
 
 .socialMediaIcons {
-    margin-left: -40px;
-    color: #ffffff;
+    display: flex;
     margin-top: 70px;
 }
 
 .icon {
     color: white;
+    width: 20px;
     margin-left: 10px;
 }
 
 .quickLinksFooter {
-    margin-left: 520px;
+    margin-left: 470px;
     list-style: none;
     font-family: sans-serif;
     font-size: light-bold;
@@ -32,7 +32,7 @@
 .list {
     margin-top: 2.5px;
     list-style: none;
-    margin-left: -30;
+    margin-left: -60;
 }
 
 .newsletterFooter {
@@ -77,7 +77,6 @@
         margin-top: 20px;
     }
 }
-
 @media (max-width: 480px) { /* For Android and smaller screens */
     .section4 {
         height: auto;

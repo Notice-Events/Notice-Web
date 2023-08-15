@@ -68,8 +68,8 @@ const login = () => {
       <Image
         src="/images/1.png"
         alt="Login Banner"
-        width={300}
-        height={300}
+        width={200}
+        height={200}
         className={styles.loginImage}
         priority
       />
@@ -97,8 +97,13 @@ const login = () => {
             className={styles.inputField}
           />
         </div>
+        <Link href="/forgotpassword">
+          <h5 className={styles.forgotPasswordLink}>Forgot Password?</h5>
+        </Link>
         <div id="message">{message}</div>
         <button type="submit" className={styles.loginButton}>LOGIN</button>
+  
+
       </form>
       <section className={styles.downloadApp}>
         <div className={styles.downloadContent}>

@@ -253,6 +253,7 @@ return (
                 
               }}
               style={{ width: "350px", height: "220px", marginRight: "60px", borderRadius: "5px",}}
+              priority
             />
             <div className={styles.eventDetails}>
               <h1>{Explore.Venue}</h1>
@@ -282,6 +283,7 @@ return (
                 
               }}
               style={{ width: "350px", height: "220px", marginRight: "60px", borderRadius: "5px",}}
+              priority
             />
             <div className={styles.eventDetails}>
               <h1>{Explore.Venue}</h1>
@@ -311,6 +313,7 @@ return (
                 
               }}
               style={{ width: "350px", height: "220px", marginRight: "60px", borderRadius: "5px",}}
+              priority
             />
             <div className={styles.eventDetails}>
               <h1>{Explore.Venue}</h1>
@@ -346,6 +349,7 @@ return (
                 
               }}
               style={{ width: "350px", height: "320px", marginRight: "60px", borderRadius: "5px",}}
+              priority
             />
             <div className={styles.eventDetails}>
               <h2>{Explore.Venue}</h2>
@@ -432,7 +436,7 @@ return (
   }}
 >
   <div style={{ padding: '60px', display: 'flex' }}>
-    <Image src="/images/platform.png" alt="My Image" width={300} height={250} style={{ marginRight: '180px' }}/>
+    <Image src="/images/platform.png" alt="My Image" width={300} height={250} priority style={{ marginRight: '180px' }}/>
     <div className="platform">
       <h1>Our platform helps bring your vision to life.</h1>
       <p

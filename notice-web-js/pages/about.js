@@ -47,7 +47,7 @@ return (
       <br/>fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br/>proident, sunt in culpa qui officia deserunt mollit anim id est<br/> laborum.<br/>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br/>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut<br/>enim ad minim veniam, quis nostrud exercitation ullamco<br/>laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-    <Image src="/images/About.jpg" alt="My Image" width={450} height={290} style={{ marginLeft: '200px', marginTop:"20px" }}/>
+    <Image src="/images/About.jpg" alt="My Image" width={450} height={290} priority style={{ marginLeft: '200px', marginTop:"20px" }}/>
   </div>
     </section>
     <section

@@ -11,15 +11,15 @@
 /* Image styles */
 .loginImage {
   margin-bottom: -50px;
-  margin-left: 100px;
+  margin-left: 60px;
 }
 
 /* Title styles */
 .loginTitle {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   font-family: sans-serif;
-  margin-left: 80px;
+  margin-left: 60px;
   margin-top: 0;
 }
 
@@ -88,6 +88,19 @@
   height: 30px;
   margin-left: 350px;
 }
+/* login.module.css */
+
+.forgotPasswordLink {
+  color: black; /* Change the color to your desired link color */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.forgotPasswordLink:hover {
+  color: #0056b3; /* Change the hover color if needed */
+  text-decoration: underline;
+}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {

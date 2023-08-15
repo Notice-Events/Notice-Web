@@ -36,6 +36,7 @@ const Navbar = () => {
             alt="Login Banner"
             width={150}
             height={150}
+            priority
           />
         </li>
         <div className={styles.navigation} >

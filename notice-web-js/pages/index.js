@@ -5,7 +5,6 @@ import Footer from "../Components/footer";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/router';
-
 const eventsData = [
   {
     id:1,
@@ -53,7 +52,7 @@ const LocationData = [
     image: { 
       src:"/images/food.jpg",
       width:300,
-      height:200,
+      height:300,
     },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
@@ -63,7 +62,7 @@ const LocationData = [
     image: { 
       src:"/images/food.jpg",
       width:300,
-      height:200,
+      height:300,
     },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
@@ -73,7 +72,7 @@ const LocationData = [
     image: { 
       src:"/images/food.jpg",
       width:300,
-      height:200,
+      height:300,
     },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
@@ -83,7 +82,7 @@ const LocationData = [
     image: { 
       src:"/images/food.jpg",
       width:300,
-      height:200,
+      height:300,
     },
     Venue: "LUSAKA FOOD MARKET",
     Time:"SATURDAY,AUGUST 29 2023 AT 10AM-4PM",
@@ -142,6 +141,8 @@ const Index = () => {
           src="/images/dj.jpg"
           width={400}
           height={400}
+          priority
+          alt="Dj-image"
           />
         </div>
         <div style={{ position: "relative", top: "-400px", textAlign: "justify", marginLeft:"500px" }}>
@@ -302,9 +303,9 @@ const Index = () => {
               onClick={() => {
                 console.log(`Clicked on ${location.Location}`);
               }}
-              style={{ width: "300px", height: "285px", marginRight: "20px", borderRadius: "5px" }}
+              style={{ marginRight: "20px", borderRadius: "5px" }}
             />
-            <div className={styles.eventDetails}>
+            <div className={styles.eventDetails}> 
               <h4>{location.Venue}</h4>
               <h6>{location.Time}</h6>
               <h4>{location.Location}</h4>
@@ -410,7 +411,7 @@ const Index = () => {
                 console.log(`Clicked on ${location.Location}`);
                 // Add code to navigate to the event details page
               }}
-              style={{ width: "300px", height: "285px", marginRight: "20px", borderRadius: "5px" }}
+              style={{ marginRight: "20px", borderRadius: "5px" }}
             />
             <div className={styles.eventDetails}>
               <h4>{location.Venue}</h4>
@@ -430,7 +431,7 @@ const Index = () => {
                 console.log(`Clicked on ${location.Location}`);
                 // Add code to navigate to the event details page
               }}
-              style={{ width: "300px", height: "285px", marginRight: "20px", borderRadius: "5px" }}
+              style={{ marginRight: "20px", borderRadius: "5px" }}
             />
             <div className={styles.eventDetails}>
               <h4>{location.Venue}</h4>
@@ -457,7 +458,7 @@ const Index = () => {
               onClick={() => {
                 console.log(`Clicked on ${location.Location}`);
               }}
-              style={{ width: "300px", height: "285px", marginRight: "20px", borderRadius: "5px"}}
+              style={{ marginRight: "20px", borderRadius: "5px"}}
             />
             <div className={styles.eventDetails}>
               <h4>{location.Venue}</h4>

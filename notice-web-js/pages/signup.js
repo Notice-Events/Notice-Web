@@ -1,96 +1,215 @@
 import React, { useState } from "react";
 import Footer from "../Components/footer";
-import Image from "next/image";  
+import Image from "next/image";
+import styles from "../styles/signup.module.css";
+import { useRouter } from 'next/router';
 
-const signup = () => {
-  const [username, setusername] = useState('');
-  const [email, setemail] = useState('');
+const Signup = () => {
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [username, setUsername] = useState('');
+  const [location, setLocation] = useState(''); 
   const [password, setPassword] = useState('');
-
-  const handleusernameChange = (e) => {
-    setusername(e.target.value);
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const router = useRouter();
+ 
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
   };
 
-  const handleemailChange = (e) => {
-    setemail(e.target.value);
-  }
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+
+  const handleLastNameChange = (e) => {
+    setLastName(e.target.value);
+  };
+
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+  };
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+
+  async function Signup(url,data){
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const jsonData = await response.json();
+      return jsonData;
+    } catch (error) {
+      console.log(error);
+      throw error; 
+    }
+  }
+  async function handleSubmit (e){
     e.preventDefault();
-    // Add your login logic here, such as sending the data to an API endpoint.
-    console.log('username:', username);
-    console.log('Password:', password);
-    console.log('email:', email);
+    if (password !== confirmPassword) {
+      setErrorMessage("Passwords do not match.");
+      setSuccessMessage('');
+      return;
+    }
+      try{
+        const response = await Signup('https://noticewebapi.azurewebsites.net/api/v2/auth/register', {
+      'firstName':firstName,
+      'LastName':lastName,
+      'email': email,
+      'phonenumber':phoneNumber,
+      'username' : username,
+      'location':location,
+      'password': password,
+      'confirmPassword': confirmPassword,
+    });
+      if (response.status === 200) {
+      setSuccessMessage("Registration successful!");
+      setErrorMessage('');
+    } else if (response.status === 409) {
+      setErrorMessage("Email already exists. Please use a different email.");
+      setSuccessMessage('');
+    } else {
+      setErrorMessage("An error occurred during signup. Please try again later.");
+      setSuccessMessage('');
+    }
+  } catch (error) {
+    console.error('Error signing up:', error);
+    setErrorMessage('An error occurred during signup. Please try again later.');
+    setSuccessMessage('');
+  }
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily:"sans-serif"}}>
+    <div className={styles.signupContainer}>
       <Image
         src="/images/1.png"
         alt="Login Banner"
-        width={300}
-        height={300}
-        style={{marginBottom:'-80px', marginLeft:"120px"}}
-
+        width={200}
+        height={200}
+        className={styles.loginImage}
+        priority
       />
-      <h3 style={{ fontSize: 50, fontWeight: 'bold', marginLeft:"120px"}}>SIGN UP</h3>
-      <form onSubmit={handleSubmit} style={{ width: '300px', marginTop: '0px', marginLeft:"-200px"}}>
-        <div style={{ marginBottom: '10px' }}>
-          <label style={{fontFamily:"sans-serif"}}><b>Username:</b></label>
+      <h3 className={styles.signupTitle}>SIGN UP</h3>
+      {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+      {successMessage && <p className={styles.success}>{successMessage}</p>}
+      <form onSubmit={handleSubmit} className={styles.signupForm}>
+        <div className={styles.inputContainer}>
+          <label htmlFor="firstName"><b>First Name:</b></label>
           <input
-            type="username"
-            placeholder="Enter username"
-            value={username}
-            onChange={handleusernameChange}
-            style={{ width: '200%', padding: '15px', border: '1px solid #ccc', borderRadius: '4px', marginTop:"10px"}}
+            type="text"
+            id="firstName"
+            placeholder="Enter first name"
+            value={firstName}
+            onChange={handleFirstNameChange}
+            className={styles.inputField}
           />
         </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label style={{fontFamily:"sans-serif"}}><b>Email:</b></label>
+        <div className={styles.inputContainer}>
+          <label htmlFor="lastName"><b>Last Name:</b></label>
+          <input
+            type="text"
+            id="lastName"
+            placeholder="Enter last name"
+            value={lastName}
+            onChange={handleLastNameChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="email"><b>Email:</b></label>
           <input
             type="email"
-            placeholder="Enter Email"
-            value={username}
-            onChange={handleemailChange}
-            style={{ width: '200%', padding: '15px', border: '1px solid #ccc', borderRadius: '4px', marginTop:"10px"}}
+            id="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={handleEmailChange}
+            className={styles.inputField}
           />
         </div>
-        <div style={{ marginBottom: '10px' }}>
-          <label style={{fontFamily:"sans-serif"}}><b>Password:</b></label>
+        <div className={styles.inputContainer}>
+          <label htmlFor="phoneNumber"><b>Phone Number:</b></label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            placeholder="Enter phone number"
+            value={phoneNumber}
+            onChange={handlePhoneNumberChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="username"><b>Username:</b></label>
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter username"
+            value={username}
+            onChange={handleUsernameChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="location"><b>Location:</b></label>
+          <input
+            type="text"
+            id="location"
+            placeholder="Enter location"
+            value={location}
+            onChange={handleLocationChange}
+            className={styles.inputField}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label htmlFor="password"><b>Password:</b></label>
           <input
             type="password"
-            value={password}
+            id="password"
             placeholder="Enter password"
+            value={password}
             onChange={handlePasswordChange}
-            style={{ width: '200%', padding: '15px', border: '1px solid #ccc', borderRadius: '4px', marginTop:"10px" }}
+            className={styles.inputField}
           />
         </div>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: 'black',
-            color: 'white',
-            width: '210%',
-            padding: '15px',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            marginTop:'50px',
-            marginBottom:'300px',
-          }}
-        >
+        <div className={styles.inputContainer}>
+          <label htmlFor="confirmPassword"><b>Confirm Password:</b></label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm password"
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
+            className={styles.inputField}
+          />
+        </div>
+        <button type="submit" className={styles.signupButton}>
           <b>Sign up</b>
         </button>
       </form>
       <Footer />
-      <div style={{marginTop:"70px"}}>
-
-            </div>
     </div>
   );
 };
 
-export default signup;
+export default Signup;
