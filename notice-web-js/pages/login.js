@@ -10,6 +10,7 @@ const login = () => {
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleUsernameChange = (e) => {
     setusername(e.target.value);
@@ -19,52 +20,53 @@ const login = () => {
     setPassword(e.target.value);
   };
 
-   // Example POST method implementation:  
    async function postData(url, data) {
     try {
       const response = await fetch(url, {
         method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
         headers: {
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
         body: JSON.stringify(data),
       });
       const jsonData = await response.json();
-      return jsonData;
+      return { status: response.status, data: jsonData };
     } catch (error) {
-      console.log(error);
-      throw error; 
+      console.error(error);
+      throw error;
     }
   }
+
   const router = useRouter();
 
   async function handleSubmit(e) {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
+    
+    setIsLoading(true);
+
     try {
-      const res = await postData('https://noticewebapi.azurewebsites.net/api/v2/auth/login', {
-      'username': username,
-      'password': password,
-    });
-    if (res.status === 200) {
-      // Login successful, use router to navigate to a new page
-      router.push('/dashboard'); // Replace with your actual route
-    } else {
-      setMessage('Invalid Credentials. Please try again');
+      const res = await postData(
+        'https://noticewebapi.azurewebsites.net/api/v2/auth/login', {
+        username,
+        password,
+      });
+      console.log("Api status", res.status)
+      if (res.status === 200 || res.status === 201) {
+        localStorage.setItem('accessToken', res.data.accessToken);
+        router.push('/dashboard');
+      } else {
+        setMessage('Invalid Credentials. Please try again');
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
-  } catch (error) {
-    setMessage('Invalid Credentials. Please try again');
-    console.error(error);
-  } 
   }
   
   return (
     <div className={styles.loginContainer}>
-
       <Image
         src="/images/1.png"
         alt="Login Banner"
@@ -101,8 +103,9 @@ const login = () => {
           <h5 className={styles.forgotPasswordLink}>Forgot Password?</h5>
         </Link>
         <div id="message">{message}</div>
-        <button type="submit" className={styles.loginButton}>LOGIN</button>
-  
+        <button type="submit" className={styles.loginButton} disabled={isLoading}>
+        {isLoading ? "Logging in..." : "LOGIN"}
+      </button>
 
       </form>
       <section className={styles.downloadApp}>

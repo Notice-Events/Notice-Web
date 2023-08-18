@@ -74,7 +74,7 @@ const Signup = () => {
       return;
     }
       try{
-        const response = await Signup('https://noticewebapi.azurewebsites.net/api/v2/auth/register', {
+        const res = await Signup('https://noticewebapi.azurewebsites.net/api/v2/auth/register', {
       'firstName':firstName,
       'LastName':lastName,
       'email': email,
@@ -84,10 +84,10 @@ const Signup = () => {
       'password': password,
       'confirmPassword': confirmPassword,
     });
-      if (response.status === 200) {
+      if (res.status === 200) {
       setSuccessMessage("Registration successful!");
       setErrorMessage('');
-    } else if (response.status === 409) {
+    } else if (res.status === 409) {
       setErrorMessage("Email already exists. Please use a different email.");
       setSuccessMessage('');
     } else {

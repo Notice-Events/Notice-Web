@@ -5,6 +5,8 @@ import Footer from "../Components/footer";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/router';
+
+
 const eventsData = [
   {
     id:1,
@@ -212,7 +214,7 @@ const Index = () => {
 
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {currentEvents.map((event, index) => (
-          <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
+          <div key={index} className={styles.pictureContainer} style={{ marginBottom: "20px" }}>
              <Link href={`/event/${event.page}`}>
               <Image
               src={event.image}
@@ -296,7 +298,7 @@ const Index = () => {
 
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {LocationData.map((location, index) => (
-          <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
+          <div key={index} className={styles.pictureContainer} style={{ marginBottom: "20px" }}>
             <Image
               src={location.image}
               alt={location.Location}
@@ -403,7 +405,7 @@ const Index = () => {
 
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {LocationData.map((location, index) => (
-          <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
+          <div key={index} className={styles.pictureContainer} style={{ marginBottom: "20px" }}>
             <Image
               src={location.image}
               alt={location.Location}
@@ -423,7 +425,7 @@ const Index = () => {
       </div>
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
         {LocationData.map((location, index) => (
-          <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px" }}>
+          <div key={index} className={styles.pictureContainer} style={{ marginBottom: "20px" }}>
             <Image
               src={location.image}
               alt={location.Location}
@@ -451,7 +453,7 @@ const Index = () => {
       </section>
       <div className={styles.pictureGroupContainer} style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center",}}>
         {LocationData.map((location, index) => (
-          <div key={index} className={styles.pictureContainer} style={{ marginLeft: "20px", marginBottom: "20px"}}>
+          <div key={index} className={styles.pictureContainer} style={{ marginBottom: "20px"}}>
             <Image
               src={location.image}
               alt={location.Location}
